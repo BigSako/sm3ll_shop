@@ -32,9 +32,9 @@
                 </ul>
                 {% if user.is_authenticated %}
                 <ul class="nav navbar-nav navbar-right">
-                  <li>
-                    <form  class="form-inline" role="form" action="/market/search/" method="get">
-                      <input type="text" name="q" placeholder="Enter item name"/>
+                  <li><a href="#">bla</a>
+                    <form action="/market/search/" method="get">
+                      <input type="text" name="q" display-text="Search"/>
                     </form>
                   </li>
                     <li class="dropdown">
@@ -51,10 +51,6 @@
                                 </a>
                             </li>
                         </ul>
-                    </li>
-                    <li role="presentation">
-                      <a class="btn btn-primary" href="/cart"><img width="32" height="32" src="/static/img/cart.png"/>
-                        Cart <span class="badge">{{ number_cart_items }}</span></a>
                     </li>
                 </ul>
                 {% endif %}

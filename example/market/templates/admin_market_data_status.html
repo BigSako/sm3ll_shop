@@ -1,0 +1,5 @@
+{% extends "admin/base_site.html" %}
+{% block content %}
+There are currently {{ type_cnt }} Item Types, {{ item_group_cnt }} Item Groups and {{ market_group_cnt }} Market Groups in database.<br />
+Would you like to <a href="../external_update/">update them</a>?
+{% endblock %}

@@ -41,6 +41,7 @@ class HomeView(TemplateView):
             'incursions': incursions,
         }
 
+
     def get_authed_crest_context(self):
         """fetch some market data from authenticated CREST"""
 

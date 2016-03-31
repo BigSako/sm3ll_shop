@@ -5,16 +5,34 @@
 {% block title %}Welcome – {{ block.super }}{% endblock %}
 
 {% block jumbotron %}
-    <h1>Hello, world!</h1>
+    <h1>Welcome to SM3LL Panda Delivery!</h1>
     <p>
-        This is an example for a simple Django App with EVE Online Single Sign-On (SSO) and authenticated CREST access.
+        This is an application which allows you to order ingame items for EVE
+        Online with ingame ISK (aka: Jump Freighter Delivery Service).
+        The application is currently only available for Northern Coalition.,
+        and uses the <a href="https://community.eveonline.com/news/dev-blogs/eve-online-sso-and-what-you-need-to-know/"
+        target="_blank">EVE Online Single Sign-On</a> (SSO) and authenticated
+        CREST access.<br />
+        The EVE Single Sign On (SSO) is a system put into place by CCP itself,
+        to allow secure authentication against 3rd-party sites like this one.
+        If you don’t trust this site with your username and password, then log
+        into one of the official CCP sites first (e.g., EVE Gate, Forums) and on
+        that login page, click the checkbox "<i>remember me</i>".
+        That way, when you come back here, you will not be prompted for your
+        username and password, but only for the character to use.
     </p><p>
-        It depends on <a href="http://psa.matiasaguirre.net/" target="_blank">Python Social Auth</a>
+        <b>NOTE:</b> When setting up, please make sure you use a character that is currently
+        in Northern Coalition., else the application will not allow you to
+        order anything.
+    </p><p>
+        This app depends on <a href="http://psa.matiasaguirre.net/" target="_blank">Python Social Auth</a>
         to integrate EVE SSO with Django's builtin user authentication system and uses
         <a href="https://forums.eveonline.com/default.aspx?g=posts&t=398676" target="_blank">PyCrest</a>
         to interact with the CREST API.
     </p><p>
-        Use the Login button below to see some market data!
+        Use the Login button below to authenticate! It will redirect you to the
+        EVE Online Single Sign On (SSO). After logging in, you will be redirected
+        back to this site.
     </p>
     <p><a href="{% url 'social:begin' backend='eveonline' %}">
         <img class='img-responsive center-block'

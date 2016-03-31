@@ -7,13 +7,13 @@
 {% block title %}Home – {{ block.super }}{% endblock %}
 
 {% block jumbotron %}
-    <h1>Welcome, {{ user.get_full_name }}!</h1>
+    <h1>Welcome, {{ user.character_name }}!</h1>
     <div class="media">
         <div class="media-left">
             <img class="media-object" src='{{ user.get_portrait_url }}' alt='Portrait' />
         </div>
         <div class="media-body">
-            <p>I can see your CharacterID from here...</p>
+            <p>Alliance: {{ user.alliance_name }}<br />Corporation: {{ user.corporation_name }}</p>
         </div>
     </div>
 {% endblock %}

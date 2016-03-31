@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+{% load humanize %}
+{% load eve_tags %}
+
+{% block title %}Home – {{ block.super }}{% endblock %}
+
+{% block jumbotron %}
+    <div class="media">
+        <div class="media-left">
+            <img class="media-object" src='{{ user.get_portrait_url }}' alt='Portrait' />
+        </div>
+        <div class="media-body"><h3>Welcome, {{ user.character_name }}!</h3>
+            <p>Alliance: {{ user.alliance_name }}<br />Corporation: {{ user.corporation_name }}</p>
+        </div>
+    </div>
+{% endblock %}
+
+
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+      <h2>{{ group.marketGroupName }}</h2>
+      <ol class="breadcrumb">
+        {% for crumb in breadcrumbs %}
+        <li><a href="{{ crumb.link }}">{{ crumb.name }}</a></li>
+        {% endfor %}
+        <li class="active">{{ group.marketGroupName }}</li>
+      </ol>
+
+      <p><i>{{ group.description }}</i></p>
+
+        <ul>
+            {% for subgroup in subgroups %}
+                <li><a href="/market/group/{{ subgroup.marketGroupID }}">{{ subgroup.marketGroupName }}</a> -
+                  <i>{{ subgroup.description }}</i></li>
+            {% endfor %}
+        </ul>
+
+
+    </div>
+</div>
+{% endblock %}

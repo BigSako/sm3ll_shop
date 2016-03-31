@@ -1,0 +1,18 @@
+{% extends "admin/base_site.html" %}
+{% block content %}
+
+<h3>Updating...</h3>
+<table>
+  <tr><th>URL</th><th>Data</th></tr>
+{% for url,value in response_data.items %}
+    <tr class="{% cycle 'row1' 'row2' %}">
+        <td>{{ url }}</td>
+        <td><textarea rows="5" cols="50">{{ value }}</textarea></td>
+    </tr>
+{% endfor %}
+</table>
+
+<h3>Status</h3>
+There are now {{ type_cnt }} Item Types, {{ item_group_cnt }} Item Groups and {{ market_group_cnt }} Market Groups in database.<br />
+
+{% endblock %}

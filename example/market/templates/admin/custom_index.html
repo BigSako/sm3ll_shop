@@ -1,0 +1,9 @@
+{% extends "admin/index.html" %}
+
+{% block sidebar %}
+    {{block.super}}
+    <div>
+        <h1>Extras</h1> 
+        <a href="/admin/market/external/">Update underlying SDE data</a>
+    </div>
+{% endblock %}
